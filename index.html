@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שחר פריד — פורטפוליו</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== YARDEN FONT ===== */
+    @font-face {
+      font-family: 'Yarden';
+      src: url('yarden-bold-alefalefalef.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Yarden';
+      src: url('yarden-regular-alefalefalef.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    :root {
+      --cream:        #F7F4EF;
+      --grid-line:    #E2D9CA;
+      --purple:       #8783D1;
+      --purple-light: #B8B5E8;
+      --yellow:       #FFD95D;
+      --yellow-light: #FFF0A0;
+      --linen:        #F0EADC;
+      --text-dark:    #2D2A22;
+      --text-mid:     #5A5347;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Assistant', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: var(--text-dark);
+      background-color: #F7F4EF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cpath d='M 28 0 L 0 0 0 28' fill='none' stroke='%23E2D9CA' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-attachment: fixed;
+    }
+
+    /* ===== GLOBAL TEXT COLOR ===== */
+    p, h1, h2, h3, span, li, a, button, nav, footer, div, label {
+      color: #573E20 !important;
+    }
+    .popup-close { color: white !important; }
+    .popup-close:hover { color: white !important; }
+
+    /* ===== ENGLISH FONT ===== */
+    :lang(en), [lang="en"], .en-text {
+      font-family: 'Berlin Sans FB Demi', 'Berlin Sans FB', sans-serif !important;
+    }
+
+    /* ===== GLOBAL TEXT SIZES ===== */
+    p, span, li {
+      font-size: 18px;
+      font-family: 'Assistant', sans-serif;
+    }
+
+    /* ===== HEADINGS ===== */
+    h1 {
+      font-family: 'Yarden', sans-serif !important;
+      font-size: 50px;
+      font-weight: 700 !important;
+    }
+
+    h2 {
+      font-family: 'Yarden', sans-serif !important;
+      font-size: 50px;
+      font-weight: 700 !important;
+    }
+
+    h3 {
+      font-family: 'Yarden', sans-serif !important;
+      font-size: 28px;
+      font-weight: 700 !important;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      background: rgba(247, 244, 239, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 2px 16px rgba(135, 131, 209, 0.10);
+      padding: 12px 40px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    nav a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    /* ===== HERO ===== */
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: calc(60px + 32px);
+      padding-bottom: 32px;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+
+    .hero-inner {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 60px;
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-family: 'Yarden', sans-serif !important;
+      font-size: 50px;
+      font-weight: 700 !important;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      font-weight: 400;
+      font-family: 'Assistant', sans-serif;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 28px;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-chip {
+      background: white;
+      border: 1.5px solid var(--purple);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--purple);
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .skill-chip:nth-child(1) { animation-delay: 0s; }
+    .skill-chip:nth-child(2) { animation-delay: 0.3s; }
+    .skill-chip:nth-child(3) { animation-delay: 0.6s; }
+    .skill-chip:nth-child(4) { animation-delay: 0.9s; }
+    .skill-chip:nth-child(5) { animation-delay: 1.2s; }
+    .skill-chip:nth-child(6) { animation-delay: 1.5s; }
+
+    .hero-photo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-photo img {
+      max-height: 420px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ===== DIVIDERS ===== */
+    .divider {
+      height: 80px;
+      border-radius: 40px;
+      margin: 40px auto;
+      width: 80%;
+    }
+
+    .divider-yellow {
+      background: var(--yellow);
+      opacity: 0.35;
+    }
+
+    .divider-purple {
+      background: var(--purple);
+      opacity: 0.25;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-family: 'Yarden', sans-serif !important;
+      font-size: 50px;
+      font-weight: 700 !important;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      left: 0;
+      height: 22px;
+      background: #FFD95D;
+      opacity: 0.65;
+      border-radius: 3px;
+      z-index: -1;
+      filter: url(#marker-effect);
+    }
+
+    .section-title.purple-marker::after {
+      background: #B8B5E8;
+    }
+
+    /* ===== PROJECTS SECTION ===== */
+    #projects {
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: right;
+      padding-right: 60px;
+      margin-bottom: 8px;
+    }
+
+    .section-hint {
+      font-size: 18px;
+      color: var(--text-mid);
+      text-align: right;
+      padding-right: 60px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 48px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .project-wrapper {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-name {
+      text-align: center;
+    }
+
+    .project-name-latin {
+      font-family: 'Berlin Sans FB Demi', 'Berlin Sans FB', sans-serif !important;
+    }
+
+    .project-card {
+      border: 2.5px solid #573E20;
+      border-radius: 8px 12px 10px 14px / 10px 8px 14px 10px;
+      box-shadow: 3px 3px 0px #573E20;
+      position: relative;
+      background: white;
+      overflow: visible;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex: 1;
+    }
+
+    .project-card img {
+      width: 100%;
+      display: block;
+      border-radius: 10px 10px 0 0;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .project-card img:hover {
+      opacity: 0.85;
+    }
+
+    .project-card-body {
+      padding: 16px 20px 36px;
+      flex: 1;
+    }
+
+    .project-card-body p {
+      font-size: 18px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    .plus-btn {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 8px rgba(135, 131, 209, 0.4);
+      transition: transform 0.2s, background 0.2s;
+      line-height: 1;
+    }
+
+    .plus-btn:hover {
+      background: var(--yellow);
+      color: var(--text-dark);
+      transform: translateX(-50%) scale(1.1);
+    }
+
+    .plus-btn.open {
+      background: var(--yellow);
+      color: var(--text-dark);
+    }
+
+    .accordion-panel {
+      display: none;
+      background: var(--linen);
+      border-top: 1.5px solid var(--grid-line);
+      padding: 20px 20px 40px;
+      font-size: 18px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      border-radius: 0 0 10px 12px;
+    }
+
+    /* ===== MORE PROJECTS TEXT + CTA ===== */
+    .more-text {
+      text-align: center;
+      font-size: 18px;
+      color: var(--text-mid);
+      margin-top: 40px;
+      margin-bottom: 8px;
+    }
+
+    .cta-btn {
+      display: block;
+      margin: 24px auto;
+      padding: 10px 24px;
+      background: var(--yellow);
+      color: var(--text-dark);
+      border: 2px solid var(--text-dark);
+      border-radius: 30px;
+      font-family: 'Assistant', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--text-dark);
+      transition: transform 0.15s, box-shadow 0.15s;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    .cta-btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 var(--text-dark);
+    }
+
+    /* ===== MORE PROJECTS PLACEHOLDER ===== */
+    #more-projects {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .more-projects-card {
+      border: 2.5px solid var(--text-dark);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0px var(--text-dark);
+      background: var(--linen);
+      width: 80%;
+      padding: 60px 20px;
+      text-align: center;
+      color: var(--text-mid);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    #about {
+      padding: 60px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .about-text-block {
+      flex: 1;
+      text-align: right;
+      padding-right: 60px;
+    }
+
+    .about-text {
+      max-width: 600px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      font-size: 18px;
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+
+    .about-image {
+      flex-shrink: 0;
+    }
+
+    .about-image img {
+      max-width: 200px;
+      max-height: 240px;
+      width: 100%;
+      object-fit: cover;
+      border: 3px solid #FFD95D;
+      border-radius: 12px;
+      box-shadow: 3px 3px 0px #FFD95D;
+      display: block;
+    }
+
+    .contact-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-icons a,
+    .contact-icons button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-dark);
+      transition: color 0.2s, transform 0.2s;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      font-family: 'Assistant', sans-serif;
+    }
+
+    .contact-icons a:hover,
+    .contact-icons button:hover {
+      color: var(--purple);
+      transform: scale(1.1);
+    }
+
+    .contact-icons svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* ===== POPUP ===== */
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+    .popup-overlay.active {
+      display: flex;
+    }
+    .popup-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 750px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      background-color: #F7F4EF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cpath d='M 28 0 L 0 0 0 28' fill='none' stroke='%23E2D9CA' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      border: 2.5px solid #573E20;
+      border-radius: 8px 12px 10px 14px / 10px 8px 14px 10px;
+      box-shadow: 3px 3px 0px #573E20;
+      padding: 0 40px 48px;
+      z-index: 2100;
+      direction: rtl;
+    }
+    .popup-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: #F7F4EF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cpath d='M 28 0 L 0 0 0 28' fill='none' stroke='%23E2D9CA' stroke-width='0.5'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      padding: 12px 14px 8px;
+      margin: 0 -40px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .popup-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: white !important;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background 0.2s, transform 0.15s;
+      flex-shrink: 0;
+    }
+    .popup-close:hover {
+      background: #2D2A22;
+      transform: scale(1.1);
+    }
+    .popup-title {
+      font-family: 'Yarden', sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      color: #573E20 !important;
+      margin-bottom: 8px;
+      margin-top: 20px;
+    }
+    .popup-subtitle {
+      font-family: 'Assistant', sans-serif;
+      font-size: 16px;
+      color: var(--text-mid);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .popup-step {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--grid-line);
+    }
+    .popup-step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .popup-step-name {
+      font-family: 'Yarden', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+    .popup-step-body {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .popup-step-text {
+      flex: 1;
+      font-family: 'Assistant', sans-serif;
+      font-size: 18px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+    .popup-step-img {
+      flex-shrink: 0;
+      max-width: 180px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      display: block;
+    }
+    .popup-step-img:hover {
+      opacity: 0.85;
+      transform: scale(1.03);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* ===== SMALL PROJECTS GRID ===== */
+    .small-projects-grid {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 32px;
+    }
+
+    .small-project-card {
+      width: 30%;
+      border: 2.5px solid #573E20;
+      border-radius: 8px 12px 10px 14px / 10px 8px 14px 10px;
+      box-shadow: 3px 3px 0px #573E20;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .small-project-card a {
+      display: block;
+    }
+
+    .small-project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .small-project-card img:hover {
+      opacity: 0.85;
+    }
+
+    .small-card-body {
+      padding: 14px 16px 18px;
+      flex: 1;
+    }
+
+    .small-card-title {
+      font-family: 'Yarden', sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: #573E20 !important;
+    }
+
+    .small-card-desc {
+      font-size: 16px;
+      color: #5A5347;
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 16px;
+      color: var(--text-mid);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-inner {
+        flex-direction: column-reverse;
+        text-align: right;
+        gap: 32px;
+      }
+
+      .hero-photo img {
+        max-height: 260px;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .hero-text h1 {
+        font-size: 36px;
+      }
+
+      h2, .section-title {
+        font-size: 36px;
+      }
+
+      .projects-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-wrapper {
+        width: 90%;
+      }
+
+      .section-header,
+      .section-hint {
+        padding-right: 0;
+      }
+
+      .about-content {
+        flex-direction: column-reverse;
+        gap: 24px;
+      }
+
+      .about-text-block {
+        padding-right: 0;
+        width: 100%;
+      }
+
+      .about-image img {
+        max-width: 100%;
+        width: 100%;
+        max-height: 260px;
+      }
+
+      nav {
+        padding: 12px 20px;
+        gap: 20px;
+      }
+
+      #projects,
+      #about {
+        padding: 40px 20px;
+      }
+
+      .small-projects-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .small-project-card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Filters -->
+  <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <!-- Marker highlight filter for section titles -->
+      <filter id="marker-effect" x="-5%" y="-50%" width="110%" height="200%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04 0.07" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4"
+          xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <a href="#home">בית</a>
+    <a href="#projects">פרויקטים</a>
+    <a href="#about">אודות</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home">
+    <div class="hero-inner">
+      <!-- Text — right side in RTL -->
+      <div class="hero-text">
+        <h1>היי, שמי שחר</h1>
+        <p>סטודנטית שנה ב' לתואר ראשון בטכנולוגיות למידה במכון הטכנולוגי חולון HIT.</p>
+        <div class="skills-row">
+          <span class="skill-chip">AI</span>
+          <span class="skill-chip">UX/UI</span>
+          <span class="skill-chip">Figma</span>
+          <span class="skill-chip">Illustrator</span>
+          <span class="skill-chip">Unity 2D</span>
+          <span class="skill-chip">Storyline</span>
+        </div>
+      </div>
+      <!-- Photo — left side in RTL -->
+      <div class="hero-photo">
+        <img src="heroSection.png" alt="שחר פריד">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIVIDER — YELLOW ===== -->
+  <div class="divider divider-yellow"></div>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-header">
+      <h2 class="section-title">פרויקטים נבחרים</h2>
+    </div>
+    <p class="section-hint">
+      לחיצה על תמונת הפרויקט תפתח אותו בעמוד חדש.<br>
+      לצפייה בתהליך העבודה אפשר ללחוץ על כפתור +.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-wrapper">
+        <h3 class="project-name">על השולחן</h3>
+        <div class="project-card" id="card1">
+          <a href="https://www.figma.com/proto/R5cmikVUbnmKYxLE1KKueM/%D7%A2%D7%9C-%D7%94%D7%A9%D7%95%D7%9C%D7%97%D7%9F?node-id=293-24490&t=hJI7ZYm0Q96Higu2-1" target="_blank">
+            <img src="poject1.png" alt="על השולחן — אפיון ועיצוב אתר הדרכתי">
+          </a>
+          <div class="project-card-body">
+            <p>אפיון ועיצוב אתר הדרכתי ב-Figma. מטרתו להעניק למשתמש ידע בסיסי וכלים פשוטים לעצב שולחן למצבי אירוח שונים.</p>
+          </div>
+         <button class="plus-btn" onclick="openPopup('popup-project1')" aria-label="פרטים נוספים">+</button>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-wrapper">
+        <h3 class="project-name project-name-latin">Rapid e-Learning</h3>
+        <div class="project-card" id="card2">
+          <a href="https://edu.sliceapp.net/share/6954e58d4591ca0832600c0b" target="_blank">
+            <img src="project2.png" alt="Rapid e-Learning — לומדה על Jailbreak">
+          </a>
+          <div class="project-card-body">
+            <p>לומדה יישומית לזיהוי ומניעת Jailbreak במודלי שפה. פותח ב-Slice.</p>
+          </div>
+          <button class="plus-btn" onclick="openPopup('popup-project2')" aria-label="פרטים נוספים">+</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== עבודות נוספות ===== -->
+    <div style="margin-top: 80px;">
+      <div class="section-header">
+        <h2 class="section-title">עבודות נוספות</h2>
+</div>
+<p class="section-hint">
+      רוצה לצפות בפרויקט? אפשר פשוט ללחוץ עליו.
+    </p>
+      
+
+      <div class="small-projects-grid">
+
+        <!-- עבודה 1 — שלייקס -->
+        <div class="small-project-card">
+          <a href="https://www.figma.com/proto/WMdVbycQgd2dWq5rbVAiyj/Onboarding-%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA-%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%99%D7%95%D7%AA-%D7%9C%D7%93%D7%95%D7%A8-%D7%94%D7%A9%D7%9C%D7%99%D7%A9%D7%99?node-id=2036-803&t=hek2t3Dxta5fQFwD-1&scaling=scale-down&content-scaling=fixed&page-id=76%3A617" target="_blank">
+            <img src="onboarding.png" alt="שלייקס">
+          </a>
+          <div class="small-card-body">
+            <p class="small-card-title">שלייקס</p>
+            <p class="small-card-desc">אונבורדינג לאפליקציית היכרויות עבור בני הגיל השלישי (Figma).</p>
+          </div>
+        </div>
+
+        <!-- עבודה 2 — סרטון סמן -->
+        <div class="small-project-card">
+          <a href="hotspot.mp4" target="_blank">
+            <img src="hotspot.png" alt="סרטון סמן">
+          </a>
+          <div class="small-card-body">
+            <p class="small-card-title">סרטון סמן</p>
+            <p class="small-card-desc">הסבר על פיצ'ר Hotspot ב-Storyline (עריכה ב-Camtasia).</p>
+          </div>
+        </div>
+
+        <!-- עבודה 3 — משחק זיכרון -->
+        <div class="small-project-card">
+          <a href="https://yarinila.github.io/middleTaskAnimation/" target="_blank">
+            <img src="game.png" alt="משחק זיכרון">
+          </a>
+          <div class="small-card-body">
+            <p class="small-card-title">משחק זיכרון</p>
+            <p class="small-card-desc">משחק לימודי לשני שחקנים, פותח ב-Unity 2D.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== DIVIDER — PURPLE ===== -->
+  <div class="divider divider-purple"></div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="about-content">
+      <!-- Text — right side in RTL -->
+      <div class="about-text-block">
+        <h2 class="section-title purple-marker">קצת עליי</h2>
+        <p class="about-text">
+          שלום, שמי שחר פריד, סטודנטית שנה ב' לתואר ראשון בטכנולוגיות למידה במכון הטכנולוגי חולון HIT.<br><br>
+          אני משלבת בין עיצוב, טכנולוגיה ואנשים, ומתמקדת באפיון ופיתוח חוויות למידה דיגיטליות ואינטראקטיביות. במהלך לימודיי אני יוצרת תוצרים המשלבים חשיבה פדגוגית, חוויית משתמש וכלים טכנולוגיים, במטרה לייצר למידה משמעותית, ברורה ומעוררת מעורבות.
+        </p>
+        <div class="contact-icons">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/shahar-frid" target="_blank" title="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="LinkedIn">
+              <path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5V5c0-2.761-2.238-5-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"/>
+            </svg>
+          </a>
+          <!-- Email -->
+          <a href="mailto:shahar.frid1@gmail.com?subject=היי שחר" title="שלחי מייל" id="email-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Email">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- Image — left side in RTL -->
+      <div class="about-image">
+        <img src="aboutPic.jpeg" alt="שחר פריד">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPUP — על השולחן ===== -->
+  <div class="popup-overlay" id="popup-project1" onclick="handleOverlayClick(event,'popup-project1')">
+    <div class="popup-box">
+      <div class="popup-header">
+        <button class="popup-close" onclick="closePopup('popup-project1')" aria-label="סגור">×</button>
+      </div>
+
+      <h2 class="popup-title">שלבי תהליך עבודה — "על השולחן"</h2>
+      <p class="popup-subtitle">האתר פותח במסגרת שלושה קורסים: אפיון ממשק וחווית משתמש, עיצוב ממשק משתמש והנגשת אתרי אינטרנט.</p>
+
+      <!-- שלב 1 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 1 — שכבת Strategy (אסטרטגיה)</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">הגדרת נושא, שם לאתר וקהל היעד, לצד ניסוח מטרות, צורך הדרכתי וקונספט מרכזי.</p>
+        </div>
+      </div>
+
+      <!-- שלב 2 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 2 — שכבת Scope (היקף)</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">נבנו 4 פרסונות המייצגות את קהל היעד: זוגות צעירים ומשפחות בתחילת דרכן, המעוניינים ללמוד לעצב שולחן אירוח באופן פשוט ואסתטי. הפרסונות התבססו על היכרות עם קהל היעד (גילאי 25+), המאופיין במעבר לחיים עצמאיים ובתחילת הרגלי אירוח ביתיים. הפרסונות שיקפו מגוון צרכים ושימושים באתר, ושימשו בסיס לאפיון התוכן וחוויית המשתמש לאורך הפרויקט.</p>
+          <img src="Scope.png" alt="Scope" class="popup-step-img" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+      <!-- שלב 3 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 3 — שכבת Structure (מבנה)</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">חלוקת האתר למקטעים בהתאם לצרכי הפרסונות, תוך יצירת מבנה הדרגתי ואינטראקטיבי.</p>
+        </div>
+      </div>
+
+      <!-- שלב 4 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 4 — שכבת Skeleton</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">יצירת Wireframe ברמת Mid-Fidelity המדמה את מבנה האתר, תוך שילוב בין תוכן הדרכתי, היררכיה ברורה ושיקולי חוויית משתמש.</p>
+          <img src="Skeleton.png" alt="Skeleton" class="popup-step-img" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+      <!-- שלב 5 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 5 — שכבת Surface</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">עיצוב ויזואלי מלא של האתר, הכולל צבעים, טיפוגרפיה ושפה גרפית התומכת בחוויית המשתמש.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== POPUP — Rapid e-Learning ===== -->
+  <div class="popup-overlay" id="popup-project2" onclick="handleOverlayClick(event,'popup-project2')">
+    <div class="popup-box">
+      <div class="popup-header">
+        <button class="popup-close" onclick="closePopup('popup-project2')" aria-label="סגור">×</button>
+      </div>
+
+      <h2 class="popup-title">שלבי תהליך עבודה — "Jailbreak"</h2>
+      <p class="popup-subtitle">הלומדה פותחה במסגרת קורס פיתוח יחידות למידה דיגיטלית.</p>
+
+      <!-- שלב 1 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 1 — הגדרת צורך ומטרות למידה</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">זיהוי פער ידע לגבי תופעת ה-Jailbreak וניסוח מטרות למידה אופרטיביות לפי טקסונומיית בלום (ידע, הבנה וניתוח).</p>
+        </div>
+      </div>
+
+      <!-- שלב 2 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 2 — אפיון קהל יעד והקשר ארגוני</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">מדריכי הדרכה פנים־ארגוניים, מומחי תוכן ומפתחי הדרכה, וכן מובילי הטמעה בארגונים, הפועלים בסביבות עבודה המשלבות מודלי שפה. אלו נדרשים להבין לעומק את תופעת ה-Jailbreak, לזהות סיכונים פוטנציאליים ולהטמיע עקרונות עבודה והדרכה בטוחה במסגרת הכשרות ופעילות ארגונית.</p>
+        </div>
+      </div>
+
+      <!-- שלב 3 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 3 — פיצוח תוכן והיררכיית ידע</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">פירוק הנושא למרכיבי ליבה לצד ניתוח מקרים ודוגמאות רלוונטיות, פריסת התוכן הלימודי וסידורו במצגת PPT.</p>
+        </div>
+      </div>
+
+      <!-- שלב 4 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 4 — תכנון חוויית למידה מהירה</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">בניית רצף למידה קצר וממוקד הכולל הסברים תמציתיים, שאלות הבנה ותרגול ניתוח סיטואציות, תוך שמירה על זרימה והעמקה הדרגתית. שימוש בכלי פיתוח מהירים כמו Genially והטמעתם בלומדה.</p>
+          <img src="genially.png" alt="Genially" class="popup-step-img" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+      <!-- שלב 5 -->
+      <div class="popup-step">
+        <div class="popup-step-name">שלב 5 — שימוש בסוכן (Agent) SLICE</div>
+        <div class="popup-step-body">
+          <p class="popup-step-text">שימוש בסוכן AI לצורך פיצוח, ארגון וסידור התוכן הלימודי, תוך סיוע בבניית היררכיית ידע, ניסוח תכנים והתאמתם ללמידה מהירה.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2026 שחר פריד
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ===== POPUP — פונקציות משותפות =====
+    function openPopup(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e, id) {
+      if (e.target === document.getElementById(id)) closePopup(id);
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        ['popup-project1','popup-project2'].forEach(id => closePopup(id));
+        closeLightbox();
+      }
+    });
+
+    // ===== LIGHTBOX =====
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+  </script>
+
+</body>
+</html>
